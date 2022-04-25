@@ -25,6 +25,18 @@
 
 
 
+// function eatFood(units, food) {
+//   console.log(`Ate ${units} ${food}`);
+//   console.log(`Yum`);
+//   return true;
+// }
+
+// const tacos = eatFood("5", "tacos");
+// console.log(`Ate: ${tacos}`);
+
+
+
+
 /* 
 Function declaration = vanilla function - not anonymous can be called before the function is initialized
 Function expressions = anonymous function assigned to a variable, variable can be called like the function. Cannot be called before the variable is initialized with the function.
@@ -32,19 +44,19 @@ Arrow functions are basically one liner function expressions - return is implied
 */
 
 // My first arrow function 
-const countryCode = code => {
-    let cc = '';
-    if(code == 'CA' || code == 'US'){
-        cc = '+1';
-    } else if(code == 'LKA'){
-        cc = '+94';
-    } else {
-        cc = 'Let me google the country code for you..';
-    }
-    return cc;
-}
+// const countryCode = code => {
+//     let cc = '';
+//     if(code == 'CA' || code == 'US'){
+//         cc = '+1';
+//     } else if(code == 'LKA'){
+//         cc = '+94';
+//     } else {
+//         cc = 'Let me google the country code for you..';
+//     }
+//     return cc;
+// }
 
-const input = prompt('What country (abbreviation) are you dialling? ');
-console.log(countryCode(input.toUpperCase()));
+// const input = prompt('What country (abbreviation) are you dialling? ');
+// console.log(countryCode(input.toUpperCase()));
 
 
