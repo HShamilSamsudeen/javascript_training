@@ -148,7 +148,7 @@ Test data: 125, 555 and 44
 
 // Q1.
 // const calcTip = billValue => {
-//   if (billValue >= 50 || billValue <= 300) {
+//   if (billValue >= 50 && billValue <= 300) {
 //     return parseFloat(billValue * 0.15);
 //   } else {
 //     return parseFloat(billValue * 0.2);
@@ -223,7 +223,6 @@ Test data: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.9
 tall.
 */
 
-
 // Q1. & Q2.
 // const Mark = {
 //   firstName: "Mark",
@@ -264,9 +263,6 @@ tall.
 // } else {
 //   console.log(`They both have equal BMI's!`);
 // }
-
-
-
 
 /* 
 Coding Challenge #4
@@ -311,10 +307,10 @@ const totals = new Array();
 
 // Q3.
 const calcTip = billValue => {
-  if (billValue >= 50 || billValue <= 300) {
-    return parseFloat(billValue * 0.15);
+  if (billValue >= 50 && billValue <= 300) {
+    return billValue * 0.15;
   } else {
-    return parseFloat(billValue * 0.2);
+    return billValue * 0.2;
   }
 };
 
