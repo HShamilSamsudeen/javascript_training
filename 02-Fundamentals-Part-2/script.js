@@ -3,9 +3,9 @@
 // const day = prompt('Let\'s figure out plans for your day, what day is it?: ');
 
 // switch(day.toLowerCase()){
-//     case 'monday':    
-//     case 'tuesday':  
-//     case 'wednesday':     
+//     case 'monday':
+//     case 'tuesday':
+//     case 'wednesday':
 //     case 'thursday':
 //         console.log('Work');
 //         break;
@@ -22,9 +22,6 @@
 //         console.log('Not a valid day');
 // }
 
-
-
-
 // function eatFood(units, food) {
 //   console.log(`Ate ${units} ${food}`);
 //   console.log(`Yum`);
@@ -34,16 +31,13 @@
 // const tacos = eatFood("5", "tacos");
 // console.log(`Ate: ${tacos}`);
 
-
-
-
 /* 
 Function declaration = vanilla function - not anonymous can be called before the function is initialized
 Function expressions = anonymous function assigned to a variable, variable can be called like the function. Cannot be called before the variable is initialized with the function.
 Arrow functions are basically one liner function expressions - return is implied and not required (only if its a one liner function). Structure follows variable = parameter => return <event>
 */
 
-// My first arrow function 
+// My first arrow function
 // const countryCode = code => {
 //     let cc = '';
 //     if(code == 'CA' || code == 'US'){
@@ -153,36 +147,120 @@ Test data: 125, 555 and 44
 */
 
 // Q1.
-const calcTip = billValue => {
-  if (billValue >= 50 || billValue <= 300) {
-    return parseFloat(billValue * 0.15);
-  } else {
-    return parseFloat(billValue * 0.2);
-  }
-};
+// const calcTip = billValue => {
+//   if (billValue >= 50 || billValue <= 300) {
+//     return parseFloat(billValue * 0.15);
+//   } else {
+//     return parseFloat(billValue * 0.2);
+//   }
+// };
 
 // Q2.
-const bills = new Array(125, 555, 44);
+// const bills = new Array(125, 555, 44);
 
 // Q3.
-const tips = new Array(
-  calcTip(bills[0]),
-  calcTip(bills[1]),
-  calcTip(bills[bills.length - 1])
-);
+// const tips = new Array(
+//   calcTip(bills[0]),
+//   calcTip(bills[1]),
+//   calcTip(bills[bills.length - 1])
+// );
 
 // Q4.
+// const total = new Array();
 
-const total = new Array();
+// function addTipAndBill(a, b) {
+//   return a + b;
+// }
 
-function addTipAndBill(a, b) {
-  return a + b;
+// for (let i = 0; i < bills.length; i++) {
+//   total.push(addTipAndBill(bills[i], tips[i]));
+// }
+
+// console.log("Bills: ", bills);
+// console.log("Tips: ", tips);
+// console.log("Total: ", total);
+
+// const jonas = {
+//   firstName: "Jonas",
+//   lastName: "Schmedtmann",
+//   birthYear: 1991,
+//   job: "Teacher",
+//   friends: ["Michael", "Peter", "James"],
+//   hasDriversLicense: true,
+//   CalcAge: function () {
+//     return 2022 - this.birthYear;
+//   },
+//   Summary: function () {
+//     return console.log(
+//       `${
+//         this.firstName
+//       } is a ${this.CalcAge()} year old ${this.job.toLowerCase()}.`
+//     );
+//   },
+// };
+
+// console.log(jonas.CalcAge())
+// console.log(jonas.Summary());
+
+/*
+Coding Challenge #3
+
+Let's go back to Mark and John comparing their BMIs! This time, let's use objects to
+implement the calculations! 
+
+Remember: BMI = mass / height ** 2 = mass / (height * height) (mass in kg and height in meter)
+
+Your tasks:
+1. For each of them, create an object with properties for their full name, mass, and
+height (Mark Miller and John Smith)
+2. Create a 'calcBMI' method on each object to calculate the BMI (the same
+method on both objects). Store the BMI value to a property, and also return it
+from the method
+3. Log to the console who has the higher BMI, together with the full name and the
+respective BMI. Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
+
+Test data: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m
+tall.
+*/
+
+// Q1. & Q2.
+const Mark = {
+  firstName: "Mark",
+  lastName: "Miller",
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    return (this.mass / this.height ** 2).toFixed(1);
+  },
+};
+
+const John = {
+  firstName: "John",
+  lastName: "Smith",
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    this.bmi = (this.mass / this.height ** 2).toFixed(1);
+    return this.bmi;
+  },
+};
+
+// Q3.
+if (John.calcBMI() > Mark.calcBMI()) {
+  console.log(
+    `John's BMI (${John.calcBMI()}) is higher than Mark's (${Mark.calcBMI()})!"`
+  );
+} else if (John.calcBMI() < Mark.calcBMI()) {
+  console.log(
+    `John's BMI (${John.calcBMI()}) is lower than Mark's (${Mark.calcBMI()})!"`
+  );
+} else {
+  console.log(`They both have equal BMI's!`);
 }
 
-for (let i = 0; i < bills.length; i++) {
-  total.push(addTipAndBill(bills[i], tips[i]));
-}
-
-console.log("Bills: ", bills);
-console.log("Tips: ", tips);
-console.log("Total: ", total);
