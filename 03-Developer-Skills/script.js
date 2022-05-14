@@ -28,12 +28,13 @@ Test data:
 // Q1.
 function printForecast(arr) {
   let i = 0;
+  let string = '';
   while (i < arr.length) {
     var day_variable = i < 1 ? 'day' : 'days';
-    console.log(`${arr[i]}ºC in ${i + 1} ${day_variable}...`);
+    string += `${arr[i]}ºC in ${i + 1} ${day_variable}...`;
     i++;
   }
-  return true;
+  return string;
 }
 
 // Q2.
