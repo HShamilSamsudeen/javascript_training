@@ -30,7 +30,7 @@ function printForecast(arr) {
   let i = 0;
   let string = '';
   while (i < arr.length) {
-    var day_variable = i === 1 ? 'day' : 'days';
+    var day_variable = i === 0 ? 'day' : 'days';
     string += `${arr[i]}ºC in ${i + 1} ${day_variable}...`;
     i++;
   }
